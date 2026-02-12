@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    background-color: #1E1E1E;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@font-face {
+    font-family: 'Bingo';
+    src: url(Kagiraretapikuseru-Regular.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Bingo';
+    font-size: 32px;
+    color: white;
+}
+
+#field {
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    width: 530px;
+}
+
+.cell {
+    display: flex;
+    margin: 8px;
+    height: 96px;
+}
+
+.cell_img {
+    height: 96px;
+    margin-left: -11px;
+    margin-top: -6px;
+}
+
+.cell_button {
+    display: flex;
+    width: 90px;
+    height: 90px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    font-family: 'Bingo';
+    font-size: 16px;
+    color: white;
+    background-color: #1E1E1E;
+}.button:hover {
+    color: #1E1E1E;
+    background-color: #777777;
+}
+
+.pokemon_img {
+    height: 96px;
+    margin-left: -96px;
+    margin-top: -6px;
+}
