@@ -1,13 +1,7 @@
 export async function loadPokemonList() {
     let response = await fetch("scripts/pokemon_list.json");
-
-    if (response.ok) {
-        let pokemon_list = await response.json();
-        return pokemon_list;
-    } else {
-        alert(response.status);
-        return null;
-    }
+    let pokemon_list = await response.json();
+    return pokemon_list;
 }
 
 export async function generateField() {
@@ -28,6 +22,24 @@ export async function generateField() {
         }
     }
 
+    
     return used_id;
 }
 
+export function exportField(used_id) {
+    if (used_id.length == 0) {
+        alert("Field is empty")
+        return;
+    }
+
+    const used_id_json = JSON.stringify(used_id);
+    const blob = new Blob([used_id_json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "field.json";
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
